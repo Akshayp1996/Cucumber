@@ -27,7 +27,6 @@ public class BasePage extends DriverFactory {
 		jsExecutor = ((JavascriptExecutor) driver);
 	}
 
-	
 //-------------------------------------------------------------------------------------------------	
 // Click methods
 //-------------------------------------------------------------------------------------------------	
@@ -364,6 +363,11 @@ public class BasePage extends DriverFactory {
 
 	public void closeAlertPopUp() {
 		driver.switchTo().alert().dismiss();
+		System.out.println("Alert closed");
+	}
+
+	public void acceptAlertPopUp() {
+		driver.switchTo().alert().accept();
 		System.out.println("Alert closed");
 	}
 
