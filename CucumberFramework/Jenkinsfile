@@ -1,0 +1,9 @@
+pipeline{
+agent gitDemo
+stage('TestGitProject'){
+step(){
+echo 'Test Git Project'
+}
+}
+
+}
