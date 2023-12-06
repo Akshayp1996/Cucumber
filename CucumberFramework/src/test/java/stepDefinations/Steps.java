@@ -16,18 +16,23 @@ import pageObjects.ProductListingPage;
 
 public class Steps {
 
-	WebDriver driver;
+	WebDriver driver = null;
 
 	HomePage objHomepage = null;
 	CartPage objCartPage = null;
 	ProductListingPage objProductListingPage = null;
 	CheckoutPage objCheckoutPage = null;
 
+//	Steps() {
+//		
+//	}
+
 	@Before()
 	public void setup() throws Exception {
+
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + "\\src\\test\\resources\\resources\\chromedriver.exe");
-		this.driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		objHomepage = new HomePage(driver);
 		objCartPage = new CartPage(driver);
 		objProductListingPage = new ProductListingPage(driver);

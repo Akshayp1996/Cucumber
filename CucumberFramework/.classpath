@@ -15,12 +15,13 @@
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -29,7 +30,13 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/cucumber-junit-1.2.5.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/cucumber-core-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/cucumber-html-0.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/cucumber-junit-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/cucumber-jvm-deps-1.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/gherkin-2.12.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/junit-4.12.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
