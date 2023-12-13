@@ -11,6 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.CartPage;
 import pageObjects.CheckoutPage;
+import pageObjects.Google;
 import pageObjects.HomePage;
 import pageObjects.ProductListingPage;
 
@@ -22,6 +23,7 @@ public class Steps {
 	CartPage objCartPage = null;
 	ProductListingPage objProductListingPage = null;
 	CheckoutPage objCheckoutPage = null;
+	Google objGooglepage = null;
 
 //	Steps() {
 //		
@@ -37,6 +39,7 @@ public class Steps {
 		objCartPage = new CartPage(driver);
 		objProductListingPage = new ProductListingPage(driver);
 		objCheckoutPage = new CheckoutPage(driver);
+		objGooglepage = new Google(driver);
 	}
 
 	@After()
@@ -45,6 +48,7 @@ public class Steps {
 		objCartPage = null;
 		objProductListingPage = null;
 		objCheckoutPage = null;
+		objGooglepage = null;
 		driver.manage().deleteAllCookies();
 		driver.quit();
 	}
@@ -211,5 +215,33 @@ public class Steps {
 	@Then("Click on home button")
 	public void click_on_home_button() throws Exception {
 		objHomepage.click_on_home_button();
+	}
+
+//	------------------------------------------------------------------------------------------------
+
+	@Then("Verify the google title")
+	public void verify_the_google_title() {
+		String strActualTitle = driver.getTitle().trim();
+		System.out.println("======>" + strActualTitle);
+		Assert.assertEquals("Google", strActualTitle);
+
+	}
+
+	@When("Enter the text in search box and hit enter")
+	public void enter_the_text_in_search_box_and_hit_enter() throws Exception {
+		objGooglepage.enterTextInTextBox();
+		objGooglepage.hitEnter();
+	}
+
+	@When("Click on the first link")
+	public void click_on_the_first_link() throws Exception {
+		objGooglepage.clickOnFirstOccurance();
+	}
+
+	@Then("Verify the Page title")
+	public void verify_the_page_title() throws Exception {
+		String strActualTitle = driver.getTitle().trim();
+		System.out.println("======>" + strActualTitle);
+		Assert.assertEquals("Wikipedia", strActualTitle);
 	}
 }
